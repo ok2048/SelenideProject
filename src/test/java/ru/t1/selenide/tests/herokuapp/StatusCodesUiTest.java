@@ -8,7 +8,7 @@ import ru.t1.selenide.tests.BaseUiTest;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class StatusCodesUiTests extends BaseUiTest {
+public class StatusCodesUiTest extends BaseUiTest {
     private final SelenideElement statusCodesButton = $x("//a[@href='/status_codes']");
     private final String STATUS_LINK_XPATH = "//a[@href='status_codes/%d']";
     private final SelenideElement statusCodeText = $x("//h3/following-sibling::p");
