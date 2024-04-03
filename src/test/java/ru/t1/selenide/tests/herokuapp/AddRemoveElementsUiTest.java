@@ -7,6 +7,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.TestFactory;
 import ru.t1.selenide.tests.BaseUiTest;
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.Random;
 
 import static com.codeborne.selenide.CollectionCondition.size;
+import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -62,6 +64,7 @@ public class AddRemoveElementsUiTest extends BaseUiTest {
         deleteElementButtons.should(size(toAdd));
         for (int i = 0; i < toDelete; i++) {
             Random random = new Random();
+            deleteElementButtons.should(sizeGreaterThan(0));
             int randomIndex = random.nextInt(deleteElementButtons.size());
             deleteElementButtons.get(randomIndex).click();
             deleteElementButtons.should(size(toAdd - i - 1));

@@ -34,8 +34,6 @@ public class InfiniteScrollUiTest extends BaseUiTest {
             tries++;
         }
 
-        actions.scrollToElement(jScrollToFind)
-                .perform();
         jScrollToFind.should(visible);
     }
 }
