@@ -23,7 +23,7 @@ public class CheckboxUiTest extends BaseUiTest {
     @DisplayName("Positive scenario")
     @ParameterizedTest(name = "Checkbox{0} pressed first")
     @ValueSource(ints = {1, 2})
-    void CheckBoxPositive(int firstIndex) {
+    void checkboxPositive(int firstIndex) {
         checkboxButton.should(visible).click();
         // Приведем индекс к ИТ-шному виду :)
         firstIndex--;

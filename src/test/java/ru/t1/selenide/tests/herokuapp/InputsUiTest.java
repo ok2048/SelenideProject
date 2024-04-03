@@ -17,7 +17,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.closeWindow;
 import static ru.t1.selenide.tests.constant.Constants.BASE_URL;
-import static ru.t1.selenide.tests.helper.DataGenerator.generateTestData;
+import static ru.t1.selenide.tests.helper.DataGenerator.generateInputTestData;
 
 public class InputsUiTest {
     private final SelenideElement inputsButton = $x("//a[@href='/inputs']");
@@ -28,7 +28,7 @@ public class InputsUiTest {
     @TestFactory
     List<DynamicTest> inputsPositive() {
         List<DynamicTest> result = new ArrayList<>();
-        List<Integer> testData = generateTestData(10);
+        List<Integer> testData = generateInputTestData(10);
 
         for (int i = 0; i < testData.size(); i++) {
             final int index = i;
