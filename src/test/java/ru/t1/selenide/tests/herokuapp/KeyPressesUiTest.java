@@ -56,7 +56,8 @@ public class KeyPressesUiTest {
                         keyPressesButton.should(visible).click();
                         Actions actions = new Actions(getWebDriver());
                         actions.sendKeys(key.toString()).perform();
-                        hintElement.should(text("You entered: " + keyName.toUpperCase()));
+                        hintElement.should(visible)
+                                .should(text("You entered: " + keyName.toUpperCase()));
                         closeWindow();
                     }
             ));
